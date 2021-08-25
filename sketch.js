@@ -219,7 +219,7 @@ fill ("black")
   load.visible=false
   }
   
-  if(gameState===2 && keyDown("space")||mousePressedOver(start)){
+  if(gameState===2 && keyDown("space")||mousePressedOver(start)||touches.lenght>0){
     start.visible=false;
     getReady.visible=false;
     gameState=1;
@@ -229,6 +229,7 @@ textSize(25);
 fill ("black")
 text ("Player Score: "+ Pscore,width-250,height/4)
 text ("computer Score: "+ Cscore,100,height/4)
+touches = []
   } 
   
 if(gameState===1){
@@ -244,7 +245,7 @@ fill ("black")
 text ("Player Score: "+ Pscore,width-250,height/4)
 text ("computer Score: "+ Cscore,100,height/4)
 
- if(mousePressedOver(S)){
+ if(mousePressedOver(S)||touches.lenght>0){
   
     s.visible=true
      
@@ -287,6 +288,7 @@ text ("computer Score: "+ Cscore,100,height/4)
     if(p1===1&&p2==3){
       gameState = END;
     }
+    touches = [];
   }
   if(mousePressedOver(Sc)){
     
